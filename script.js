@@ -1,0 +1,1 @@
+console.log("Koru App is loaded and ready!");

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koru - Your Financial Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 100 100">
+                    <path d="M50,10 A40,40 0 0,1 90,50 A40,40 0 0,1 50,90 A40,40 0 0,1 10,50 A40,40 0 0,1 50,10 M50,20 A30,30 0 0,0 20,50 A30,30 0 0,0 50,80" fill="none" stroke="#2ecc71" stroke-width="8" stroke-linecap="round"/>
+                </svg>
+                <h1>koru</h1>
+            </div>
+            <div class="profile">
+                <span>Welcome, Anil</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="dashboard">
+                <h2>Dashboard</h2>
+                <div class="summary-cards">
+                    <div class="card income">
+                        <h3>Income</h3>
+                        <p>Rs. 50,000</p>
+                    </div>
+                    <div class="card expenses">
+                        <h3>Expenses</h3>
+                        <p>Rs. 15,000</p>
+                    </div>
+                    <div class="card balance">
+                        <h3>Balance</h3>
+                        <p>Rs. 35,000</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="add-transaction">
+                <h2>Add New Transaction</h2>
+                <form>
+                    <input type="text" placeholder="Description (e.g., Lunch)">
+                    <input type="number" placeholder="Amount">
+                    <select>
+                        <option value="expense">Expense</option>
+                        <option value="income">Income</option>
+                    </select>
+                    <button type="submit">Add Transaction</button>
+                </form>
+            </section>
+
+            <section class="transaction-history">
+                <h2>Transaction History</h2>
+                <ul>
+                    <li>
+                        <span>Salary</span>
+                        <span class="income-amount">+ Rs. 50,000</span>
+                    </li>
+                    <li>
+                        <span>Groceries</span>
+                        <span class="expense-amount">- Rs. 5,000</span>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
