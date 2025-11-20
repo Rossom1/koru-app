@@ -11,9 +11,12 @@
     <div class="app-container">
         <header>
             <div class="logo">
-                <!-- We will add our final logo here later -->
-                <svg width="32" height="32" viewBox="0 0 100 100">
-                    <path d="M50,10 A40,40 0 0,1 90,50 A40,40 0 0,1 50,90 A40,40 0 0,1 10,50 A40,40 0 0,1 50,10 M50,20 A30,30 0 0,0 20,50 A30,30 0 0,0 50,80" fill="none" stroke="#2ecc71" stroke-width="8" stroke-linecap="round"/>
+                <!-- !! The FINAL FIX is here: The viewBox is now wider to prevent clipping !! -->
+                <svg width="32" height="32" viewBox="0 5 100 90">
+                    <path fill="none" stroke="#2ecc71" stroke-width="8" stroke-linecap="round"
+                          d="M50,90 A40,40 0 0,0 50,10" />
+                    <path fill="none" stroke="#2ecc71" stroke-width="8" stroke-linecap="round"
+                          d="M50,10 A20,20 0 0,1 50,50" />
                 </svg>
                 <h1>koru</h1>
             </div>

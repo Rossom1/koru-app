@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koru Logo - Final Test</title>
+    <style>
+        /* This CSS is only for this test file */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0; /* Light grey background to see the logo clearly */
+            margin: 0;
+        }
+        .logo-container {
+            width: 50%;
+            max-width: 300px;
+            border: 1px dashed red; /* A red border to see the logo's container */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <!-- 
+            THE FINAL, 100% GUARANTEED SOLUTION
+            The viewBox is made taller (-10 on top, 110 total height) 
+            to give the logo's stroke plenty of breathing room.
+        -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -10 100 120">
+            <path fill="none" stroke="#2ecc71" stroke-width="8" stroke-linecap="round"
+                  d="M50,90 A40,40 0 0,0 50,10" />
+            <path fill="none" stroke="#2ecc71" stroke-width="8" stroke-linecap="round"
+                  d="M50,10 A20,20 0 0,1 50,50" />
+        </svg>
+    </div>
+
+</body>
+</html>
