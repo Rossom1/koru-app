@@ -8,38 +8,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body class="auth-page-body">
-
     <div class="auth-container">
         <div class="auth-header">
-            <h1>koru</h1>
+            <div class="logo">
+                <!-- !! The FINAL FIX is here: The stroke color is now GREEN (#2ecc71) !! -->
+                <svg width="32" height="32" viewBox="0 -10 100 120">
+                    <path fill="none" stroke="#2ecc71" stroke-width="8" stroke-linecap="round" d="M50,90 A40,40 0 0,0 50,10" />
+                    <path fill="none" stroke="#2ecc71" stroke-width="8" stroke-linecap="round" d="M50,10 A20,20 0 0,1 50,50" />
+                </svg>
+                <h1>koru</h1>
+            </div>
             <h2>Create Your Account</h2>
             <p class="subtitle">Start growing your future today.</p>
         </div>
-        
         <form class="auth-form">
-            <div class="input-group">
-                <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" name="fullname" required>
-            </div>
-            <div class="input-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="input-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
-            </div>
+            <div class="input-group"><label for="fullname">Full Name</label><input type="text" id="fullname" name="fullname" required></div>
+            <div class="input-group"><label for="email">Email Address</label><input type="email" id="email" name="email" required></div>
+            <div class="input-group"><label for="password">Password</label><input type="password" id="password" name="password" required></div>
+            <div class="input-group"><label for="confirm-password">Confirm Password</label><input type="password" id="confirm-password" name="confirm-password" required></div>
             <button type="submit" class="auth-button">Create Account</button>
         </form>
-        
-        <div class="auth-footer">
-            <p>Already have an account? <a href="login.html">Log In</a></p>
-        </div>
+        <div class="auth-footer"><p>Already have an account? <a href="index.html">Log In</a></p></div>
     </div>
-
 </body>
 </html>

@@ -8,30 +8,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body class="auth-page-body">
-
     <div class="auth-container">
         <div class="auth-header">
-            <h1>koru</h1>
+            <div class="logo">
+                <!-- !! The FINAL FIX is here: The stroke color is now GREEN (#2ecc71) !! -->
+                <svg width="32" height="32" viewBox="0 -10 100 120">
+                    <path fill="none" stroke="#2ecc71" stroke-width="8" stroke-linecap="round" d="M50,90 A40,40 0 0,0 50,10" />
+                    <path fill="none" stroke="#2ecc71" stroke-width="8" stroke-linecap="round" d="M50,10 A20,20 0 0,1 50,50" />
+                </svg>
+                <h1>koru</h1>
+            </div>
             <h2>Welcome Back</h2>
             <p class="subtitle">Log in to continue growing your future.</p>
         </div>
-        
         <form class="auth-form">
-            <div class="input-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
+            <div class="input-group"><label for="email">Email Address</label><input type="email" id="email" name="email" required></div>
+            <div class="input-group"><label for="password">Password</label><input type="password" id="password" name="password" required></div>
             <button type="submit" class="auth-button">Login Securely</button>
         </form>
-        
-        <div class="auth-footer">
-            <p>Don't have an account? <a href="signup.html">Create One</a></p>
-        </div>
+        <div class="auth-footer"><p>Don't have an account? <a href="signup.html">Create One</a></p></div>
     </div>
-
 </body>
 </html>

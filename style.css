@@ -1,4 +1,10 @@
 /* --- Global Styles & THE UNIFIED WATERMARK --- */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f4f7f6;
@@ -16,11 +22,10 @@ body::before {
     width: 100%;
     height: 100%;
     
-    /* !! THE FINAL FIX IS HERE: The color inside the SVG code itself is now a very faint green !! */
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -10 100 120'%3e%3cpath fill='none' stroke='%23d8e8d8' stroke-width='8' stroke-linecap='round' d='M50,90 A40,40 0 0,0 50,10' /%3e%3cpath fill='none' stroke='%23d8e8d8' stroke-width='8' stroke-linecap='round' d='M50,10 A20,20 0 0,1 50,50' /%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -10 100 120'%3e%3cpath fill='none' stroke='%23ebebeb' stroke-width='8' stroke-linecap='round' d='M50,90 A40,40 0 0,0 50,10' /%3e%3cpath fill='none' stroke='%23ebebeb' stroke-width='8' stroke-linecap='round' d='M50,10 A20,20 0 0,1 50,50' /%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 60vw auto;
+    background-size: 50vw auto;
     
     z-index: -1; 
 }
@@ -28,14 +33,13 @@ body::before {
 
 /* === THE FROSTED GLASS EFFECT for BOTH containers === */
 .auth-container, .app-container {
-    background-color: rgba(255, 255, 255, 0.8); /* More transparent */
-    -webkit-backdrop-filter: blur(10px); 
-    backdrop-filter: blur(10px); 
+    background-color: rgba(255, 255, 255, 0.75); 
+    -webkit-backdrop-filter: blur(15px); 
+    backdrop-filter: blur(15px); 
     
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-sizing: border-box;
 }
 
 
@@ -44,17 +48,27 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* THE FINAL FIX #1: Added padding to prevent content from touching screen edges */
+    padding: 2rem 0;
 }
 
 .auth-container {
-    padding: 3rem;
+    padding: 2.5rem; /* Slightly reduced padding for smaller screens */
     width: 100%;
     max-width: 400px;
     text-align: center;
 }
 
-.auth-header h1 { font-size: 2rem; font-weight: 600; color: #2c3e50; margin: 0; }
-.auth-header h2 { font-size: 1.5rem; font-weight: 600; color: #34495e; margin-top: 1.5rem; }
+.auth-header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.auth-header h1 { font-size: 2.5rem; font-weight: 600; color: #2c3e50; margin: 0; }
+.auth-header h2 { font-size: 1.5rem; font-weight: 600; color: #34495e; margin-top: 0.5rem; }
 .subtitle { color: #7f8c8d; margin-bottom: 2rem; }
 .input-group { margin-bottom: 1.5rem; text-align: left; }
 .input-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; }
@@ -67,9 +81,9 @@ body::before {
 
 /* === DASHBOARD PAGE STYLES === */
 .app-container {
-    width: 100%;
+    width: 90%; /* Using percentage for better responsiveness */
     max-width: 800px;
-    margin: 2rem auto;
+    margin: 2rem auto; 
     padding: 2rem;
 }
 
@@ -82,15 +96,12 @@ header {
     margin-bottom: 2rem;
 }
 
-.logo { display: flex; align-items: center; }
-.logo h1 { font-size: 1.8rem; font-weight: 600; margin: 0 0 0 10px; color: #2c3e50; }
+header .logo { display: flex; align-items: center; }
+header .logo h1 { font-size: 1.8rem; font-weight: 600; margin: 0 0 0 10px; color: #2c3e50; }
 
 section { margin-bottom: 2.5rem; }
-
 h2 { font-size: 1.4rem; font-weight: 600; color: #2c3e50; margin-bottom: 1.5rem; }
-
 .summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; }
-
 .card { background-color: rgba(249, 249, 249, 0.8); padding: 1.5rem; border-radius: 10px; border-left: 5px solid; }
 .card h3 { margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 400; color: #555; }
 .card p { margin: 0; font-size: 1.5rem; font-weight: 600; }
@@ -100,11 +111,9 @@ h2 { font-size: 1.4rem; font-weight: 600; color: #2c3e50; margin-bottom: 1.5rem;
 .card.expenses p { color: #e74c3c; }
 .card.balance { border-color: #3498db; }
 .card.balance p { color: #3498db; }
-
 .add-transaction form { display: flex; gap: 1rem; flex-wrap: wrap; }
 .add-transaction input, .add-transaction select { flex: 1; padding: 0.8rem 1rem; border: 1px solid #ddd; border-radius: 8px; font-size: 0.9rem; }
 .add-transaction button { background-color: #2ecc71; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; }
-
 .transaction-history ul { list-style: none; padding: 0; margin: 0; }
 .transaction-history li { display: flex; justify-content: space-between; padding: 1rem; border-bottom: 1px solid #f0f0f0; }
 .income-amount { color: #2ecc71; font-weight: 600; }
