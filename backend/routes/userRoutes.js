@@ -1,15 +1,18 @@
-// Import the express library
 const express = require('express');
-
-// Initialize the express router
 const router = express.Router();
+const { registerUser, loginUser, getMe } = require('../controllers/userController');
+const { protect } = require('../middleware/authMiddleware'); // Importing middleware
 
-// Import the controller function that contains the logic
-const { registerUser } = require('../controllers/userController');
-
-// Define the main route for user registration
-// When a POST request is made to '/', it will now call the actual registerUser function
+// Route for registration (Sign Up)
+// @access  Public
 router.post('/', registerUser);
 
-// Export the router so it can be used in our main server.js file
+// Route for authentication (Login)
+// @access  Public
+router.post('/login', loginUser);
+
+// Route to get user data
+// @access  Private (Protected by 'protect' middleware)
+router.get('/me', protect, getMe); 
+
 module.exports = router;

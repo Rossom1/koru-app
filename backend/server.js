@@ -4,7 +4,7 @@ const dotenv = require('dotenv').config(); // To read our 'Secret Vault' (.env)
 const connectDB = require('./config/db'); // Import our custom DB connection function
 
 // Define the port number
-const PORT = process.env.PORT || 5000; // Use port 5000 for consistency
+const PORT = process.env.PORT || 5000;
 
 // Connect to the database
 connectDB();
@@ -19,8 +19,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // === MAIN ROUTES ===
-// This tells our app to use the userRoutes file for any URL that starts with /api/users
+// User Routes
 app.use('/api/users', require('./routes/userRoutes'));
+
+// Transaction Routes (New Addition)
+app.use('/api/transactions', require('./routes/transactionRoutes'));
 
 // Start the engine (server)
 app.listen(PORT, () => console.log(`Koru engine is running smoothly at garage number ${PORT}`));
